@@ -4,260 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tereza Ho | AI & Digital Transformation Speaker</title>
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+    <meta name="description" content="Tereza Ho – AI & Digital Transformation Speaker · Storyteller. 20+ years hospitality technology & business development senior executive.">
     <style>
-        * { 
-            box-sizing: border-box; 
-        }
-        
-        html, body {
+        * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-            background: #ffffff;
-            color: #1a1a1a;
-            text-align: center;
-        }
-        
-        /* Hero photo section - full bleed at top */
-        .hero {
-            width: 100%;
-            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
-            padding: 0;
-            margin: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 320px;
-            overflow: hidden;
-        }
-        
-        .hero img {
-            width: 100%;
-            max-width: 420px;
-            height: auto;
-            display: block;
-            object-fit: contain;
-        }
-        
-        /* Main content card */
-        .card { 
-            max-width: 420px; 
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.65;
+            padding: 32px 24px;
+            max-width: 520px;
             margin: 0 auto;
-            background: white;
-            padding: 32px 28px 40px 28px;
-            text-align: center;
         }
-        
-        h1 { 
+        .profile-photo {
+            width: 100%;
+            max-width: 280px;
+            border-radius: 12px;
+            object-fit: cover;
+            display: block;
+            margin: 0 auto 32px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+        h1.name {
             font-size: 32px;
             font-weight: 700;
-            margin: 0 0 4px 0;
-            color: #000;
-            letter-spacing: -0.5px;
-            line-height: 1.1;
+            text-align: center;
+            margin-bottom: 6px;
         }
-        
-        .headline { 
-            font-size: 16px;
+        .headline-primary {
+            font-size: 20px;
             font-weight: 500;
-            color: #2d6a4f;
-            margin: 0 0 2px 0;
-            letter-spacing: 0.3px;
+            text-align: center;
+            color: #444444;
+            margin-bottom:4px;
         }
-        
-        .subheadline { 
-            font-size: 14px;
-            color: #666;
-            margin: 0 0 28px 0;
-            font-weight: 400;
-            letter-spacing: 0.2px;
+        .headline-secondary {
+            font-size:18px;
+            text-align:center;
+            color:#555555;
+            margin-bottom:24px;
         }
-        
-        .divider {
-            width: 48px;
-            height: 2px;
-            background: #2d6a4f;
-            margin: 0 auto 20px;
+        .credibility {
+            text-align:center;
+            font-size:16px;
+            color:#555;
+            margin-bottom:18px;
         }
-        
-        .credibility { 
-            font-size: 13px;
-            line-height: 1.7;
-            color: #555;
-            margin: 0 0 20px 0;
-            font-weight: 500;
+        .bio-short {
+            text-align:center;
+            font-size:16px;
+            color:#333;
+            margin-bottom:40px;
         }
-        
-        .intro { 
-            margin: 0 0 32px 0;
-            line-height: 1.8;
-            font-size: 15px;
-            color: #333;
-            font-weight: 400;
-        }
-        
-        /* Button styling */
         .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin: 0 0 28px 0;
+            display:flex;
+            flex-direction:column;
+            gap:16px;
+            margin-bottom:60px;
         }
-        
-        .button { 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 14px 24px;
-            border-radius: 6px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 600;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.3px;
+        .btn {
+            padding:18px 20px;
+            border-radius:10px;
+            text-decoration:none;
+            text-align:center;
+            font-size:17px;
+            font-weight:600;
+            border: 2px solid transparent;
         }
-        
-        .button i { 
-            margin-right: 10px;
-            font-size: 16px;
+        .btn-linkedin {
+            background-color:#0077b5;
+            color:#ffffff;
         }
-        
-        /* Primary button - LinkedIn (prominent) */
-        .button-primary {
-            background: #0077b5;
-            color: white;
-            box-shadow: 0 2px 8px rgba(0, 119, 181, 0.2);
+        .btn-savecontact {
+            background-color:#ffffff;
+            color:#222222;
+            border-color:#cccccc;
         }
-        
-        .button-primary:active {
-            opacity: 0.9;
-            transform: scale(0.98);
+        .btn-whatsapp {
+            background-color:#25d366;
+            color:#ffffff;
         }
-        
-        /* Secondary buttons */
-        .button-secondary {
-            background: #f5f5f5;
-            color: #1a1a1a;
-            border: 1px solid #ddd;
-        }
-        
-        .button-secondary:active {
-            background: #efefef;
-            transform: scale(0.98);
-        }
-        
-        /* WhatsApp button styling */
-        .button-whatsapp {
-            background: #25d366;
-            color: white;
-            box-shadow: 0 2px 8px rgba(37, 211, 102, 0.2);
-        }
-        
-        .button-whatsapp:active {
-            opacity: 0.9;
-            transform: scale(0.98);
-        }
-        
-        .footer { 
-            margin-top: 28px;
-            padding-top: 24px;
-            border-top: 1px solid #e8e8e8;
-            font-size: 11px;
-            color: #999;
-            line-height: 1.8;
-            letter-spacing: 0.2px;
-            font-weight: 500;
-        }
-        
-        /* Typography refinements */
-        .tagline {
-            display: block;
-            font-size: 13px;
-            color: #888;
-            margin-top: 2px;
-            letter-spacing: 0.4px;
-            font-weight: 400;
-        }
-        
-        @media (max-width: 480px) {
-            .hero {
-                min-height: 280px;
-            }
-            
-            .card {
-                padding: 28px 24px 36px 24px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-            
-            .headline {
-                font-size: 15px;
-            }
-            
-            .button {
-                padding: 13px 20px;
-                font-size: 14px;
-            }
-            
-            .button i {
-                margin-right: 8px;
-                font-size: 15px;
-            }
+        footer {
+            text-align:center;
+            font-size:13px;
+            color:#888888;
+            line-height:1.5;
         }
     </style>
 </head>
 <body>
+    <img src="Terezaprofile.JPG" alt="Tereza Ho professional portrait" class="profile-photo">
 
-    <!-- Full-bleed hero photo section -->
-    <div class="hero">
-        <img src="Terezaprofile.JPG" alt="Tereza Ho - Speaker & Thought Leader" class="photo">
+    <h1 class="name">Tereza Ho</h1>
+    <div class="headline-primary">AI & Digital Transformation</div>
+    <div class="headline-secondary">Speaker · Storyteller</div>
+
+    <p class="credibility">20+ years in hospitality technology, business development and regional leadership.</p>
+
+    <p class="bio-short">
+        I’m building my next chapter around practical AI adoption, digital transformation, communication and human connection.
+    </p>
+
+    <div class="button-group">
+        <a href="Tereza‑professional.vcf" class="btn btn-savecontact">Save Contact</a>
+        <a href="https://www.linkedin.com/in/terezaho" target="_blank" rel="noopener noreferrer" class="btn btn-linkedin">LinkedIn</a>
+        <a href="https://wa.me/85298460499" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp">WhatsApp</a>
     </div>
-    
-    <!-- Content card -->
-    <div class="card">
-        <h1>Tereza Ho</h1>
-        <div class="headline">AI & Digital Transformation</div>
-        <div class="subheadline">Speaker · Storyteller</div>
-        
-        <div class="divider"></div>
-        
-        <div class="credibility">
-            20+ years in hospitality technology, business development and regional leadership.
-        </div>
-        
-        <div class="intro">
-            I'm building my next chapter around practical AI adoption, digital transformation, communication and human connection.
-        </div>
-        
-        <div class="button-group">
-            <a class="button button-primary" href="https://www.linkedin.com/in/terezaho">
-                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-            </a>
-            
-            <a class="button button-whatsapp" href="https://wa.me/85298460499">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </a>
-            
-            <a class="button button-secondary" href="Tereza.vcf">
-                <i class="fa-solid fa-address-card"></i> Save Contact
-            </a>
-        </div>
-        
-        <div class="footer">
-            Hospitality Technology · AI · Digital Transformation · Speaking
-        </div>
-    </div>
+
+    <footer>
+        Hospitality Technology · AI · Digital Transformation · Speaking
+    </footer>
 
 </body>
 </html>
