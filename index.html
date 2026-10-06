@@ -30,7 +30,6 @@
             padding: 24px 16px;
         }
         
-        /* Main content card */
         .card { 
             max-width: 420px; 
             margin: 0 auto;
@@ -44,7 +43,6 @@
             overflow: hidden;
         }
         
-        /* Elegant background accent */
         .card::before {
             content: '';
             position: absolute;
@@ -56,7 +54,6 @@
             opacity: 0.6;
         }
         
-        /* Circular photo container with elegant styling */
         .photo-container {
             width: 160px;
             height: 160px;
@@ -79,6 +76,17 @@
             border-radius: 50%;
             box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
             pointer-events: none;
+        }
+
+        .photo-fallback {
+            width: 100%;
+            height: 100%;
+            display: none;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            color: #2d6a4f;
+            background: #f4faf7;
         }
         
         .photo-container img {
@@ -140,12 +148,11 @@
             font-weight: 400;
         }
         
-        /* Button styling */
         .button-group {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 0 0 36px 0;
+            margin: 0 0 30px 0;
         }
         
         .button { 
@@ -188,7 +195,6 @@
             font-size: 18px;
         }
         
-        /* Save Contact - PRIMARY - Most Prominent */
         .button-vcf {
             background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
             color: white;
@@ -201,7 +207,6 @@
             box-shadow: 0 4px 12px rgba(45, 106, 79, 0.25);
         }
         
-        /* LinkedIn - SECONDARY */
         .button-primary {
             background: linear-gradient(135deg, #0077b5 0%, #005a91 100%);
             color: white;
@@ -213,7 +218,6 @@
             box-shadow: 0 3px 10px rgba(0, 119, 181, 0.15);
         }
         
-        /* WhatsApp button styling */
         .button-whatsapp {
             background: linear-gradient(135deg, #25d366 0%, #1da753 100%);
             color: white;
@@ -224,10 +228,19 @@
             transform: scale(0.96);
             box-shadow: 0 3px 10px rgba(37, 211, 102, 0.15);
         }
+
+        .build-version {
+            margin-top: 2px;
+            font-size: 10px;
+            color: rgba(0, 0, 0, 0.34);
+            letter-spacing: 0.8px;
+            font-weight: 500;
+            user-select: none;
+        }
         
         .footer { 
-            margin-top: 36px;
-            padding-top: 28px;
+            margin-top: 26px;
+            padding-top: 24px;
             border-top: 1px solid rgba(45, 106, 79, 0.1);
             font-size: 11px;
             color: #999;
@@ -280,12 +293,20 @@
 </head>
 <body>
 
-    <!-- Content card -->
     <div class="card">
-        
-        <!-- Circular photo -->
         <div class="photo-container">
-            <img src="Terezaho.jpg" alt="Tereza Ho - Speaker & Thought Leader" loading="eager" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='Terezaho.jpg';">
+            <img id="profile-photo"
+                 src="./Terezaho.jpg?v=20261006-2"
+                 alt="Tereza Ho - Speaker & Thought Leader"
+                 loading="eager"
+                 decoding="async"
+                 fetchpriority="high"
+                 referrerpolicy="no-referrer"
+                 crossorigin="anonymous"
+                 onerror="(function(img){img.style.display='none';var fb=document.getElementById('photo-fallback');if(fb){fb.style.display='flex';}})(this)">
+            <div id="photo-fallback" class="photo-fallback" aria-hidden="true">
+                <i class="fa-solid fa-user"></i>
+            </div>
         </div>
         
         <h1>Tereza Ho</h1>
@@ -315,6 +336,8 @@
                 <i class="fa-brands fa-whatsapp"></i> WhatsApp
             </a>
         </div>
+
+        <div class="build-version">v2026.10.06.2</div>
         
         <div class="footer">
             Hospitality Technology · AI · Digital Transformation · Speaking
@@ -327,17 +350,13 @@
             if (!btn) return;
 
             function autoOpenVcf() {
-                // Best-effort AutoSave for NFC launches (mobile + direct visit).
-                // Browsers may still require user interaction depending on platform policies.
                 if (window.__vcfAutoOpened) return;
                 window.__vcfAutoOpened = true;
 
                 setTimeout(function () {
                     try {
                         btn.click();
-                    } catch (e) {
-                        // no-op
-                    }
+                    } catch (e) {}
                 }, 500);
             }
 
@@ -348,7 +367,6 @@
                 autoOpenVcf();
             }
 
-            // Fallback: auto-open for all first-time mobile visitors after load.
             window.addEventListener('load', function () {
                 var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
                 if (isMobile) {
