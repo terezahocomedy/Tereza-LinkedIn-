@@ -85,7 +85,9 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center 32%;
             display: block;
+            background: #f0f4f3;
         }
         
         h1 { 
@@ -283,7 +285,7 @@
         
         <!-- Circular photo -->
         <div class="photo-container">
-            <img src="Terezaprofile.JPG" alt="Tereza Ho - Speaker & Thought Leader">
+            <img src="Terezaho.jpg" alt="Tereza Ho - Speaker & Thought Leader" loading="eager" decoding="async" fetchpriority="high" onerror="this.onerror=null;this.src='Terezaho.jpg';">
         </div>
         
         <h1>Tereza Ho</h1>
@@ -301,7 +303,7 @@
         </div>
         
         <div class="button-group">
-            <a class="button button-vcf" href="Tereza.vcf">
+            <a class="button button-vcf" href="Tereza.vcf" download="Tereza Ho.vcf" type="text/vcard" id="save-contact-btn">
                 <i class="fa-solid fa-address-card"></i> Save Contact
             </a>
             
@@ -318,6 +320,43 @@
             Hospitality Technology · AI · Digital Transformation · Speaking
         </div>
     </div>
+
+    <script>
+        (function () {
+            var btn = document.getElementById('save-contact-btn');
+            if (!btn) return;
+
+            function autoOpenVcf() {
+                // Best-effort AutoSave for NFC launches (mobile + direct visit).
+                // Browsers may still require user interaction depending on platform policies.
+                if (window.__vcfAutoOpened) return;
+                window.__vcfAutoOpened = true;
+
+                setTimeout(function () {
+                    try {
+                        btn.click();
+                    } catch (e) {
+                        // no-op
+                    }
+                }, 500);
+            }
+
+            var isLikelyNfcEntry = /nfc|ntag|card/i.test(document.referrer || '') ||
+                                   (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+
+            if (isLikelyNfcEntry) {
+                autoOpenVcf();
+            }
+
+            // Fallback: auto-open for all first-time mobile visitors after load.
+            window.addEventListener('load', function () {
+                var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
+                if (isMobile) {
+                    autoOpenVcf();
+                }
+            }, { once: true });
+        })();
+    </script>
 
 </body>
 </html>
