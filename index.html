@@ -1,399 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tereza Ho | AI & Digital Transformation Speaker</title>
-    <meta name="description" content="Tereza Ho – AI & Digital Transformation Speaker · Storyteller. 20+ years hospitality technology & business development senior executive.">
-    
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <style>
-        * { 
-            box-sizing: border-box; 
-            margin: 0;
-            padding: 0;
-        }
-        
-        html, body {
-            margin: 0;
-            padding: 0;
-        }
-        
-        body { 
-            font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-            background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
-            color: #1a1a1a;
-            text-align: center;
-            min-height: 100vh;
-            padding: 24px 16px;
-        }
-        
-        .card { 
-            max-width: 420px; 
-            margin: 0 auto;
-            background: linear-gradient(135deg, #ffffff 0%, #f9f8f7 100%);
-            border-radius: 24px;
-            padding: 48px 32px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 1px rgba(45, 106, 79, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: linear-gradient(90deg, #2d6a4f 0%, #40916c 50%, #2d6a4f 100%);
-            opacity: 0.6;
-        }
-        
-        .photo-container {
-            width: 160px;
-            height: 160px;
-            margin: 0 auto 36px;
-            border-radius: 50%;
-            overflow: hidden;
-            border: 5px solid #2d6a4f;
-            box-shadow: 0 12px 32px rgba(45, 106, 79, 0.25), inset 0 1px 3px rgba(255, 255, 255, 0.3);
-            background: linear-gradient(135deg, #f0f4f3 0%, #ffffff 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-        
-        .photo-container::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
-            pointer-events: none;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tereza Ho | AI & Digital Transformation Speaker</title>
+  <meta
+    name="description"
+    content="Tereza Ho – AI & Digital Transformation Speaker · Storyteller. 20+ years hospitality technology & business development senior executive."
+  />
 
-        .photo-fallback {
-            width: 100%;
-            height: 100%;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            font-size: 44px;
-            color: #2d6a4f;
-            background: #f4faf7;
-        }
-        
-        .photo-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            object-position: center 22%; /* final: move up so full head shows */
-            transform: scale(1.02);      /* final: less crop */
-            display: block;
-            background: #f0f4f3;
-        }
-        
-        h1 { 
-            font-size: 36px;
-            font-weight: 800;
-            margin: 0 0 8px 0;
-            color: #0f2027;
-            letter-spacing: -0.8px;
-            line-height: 1.1;
-        }
-        
-        .headline { 
-            font-size: 18px;
-            font-weight: 700;
-            color: #2d6a4f;
-            margin: 0 0 6px 0;
-            letter-spacing: 0.4px;
-        }
-        
-        .subheadline { 
-            font-size: 15px;
-            color: #888;
-            margin: 0 0 32px 0;
-            font-weight: 400;
-            letter-spacing: 0.5px;
-        }
-        
-        .divider {
-            width: 64px;
-            height: 4px;
-            background: linear-gradient(90deg, transparent, #2d6a4f, transparent);
-            margin: 0 auto 32px;
-            border-radius: 2px;
-        }
-        
-        .credibility { 
-            font-size: 17px;
-            line-height: 1.9;
-            color: #222;
-            margin: 0 0 20px 0;
-            font-weight: 600;
-            letter-spacing: 0.1px;
-        }
-        
-        .intro { 
-            margin: 0 0 36px 0;
-            line-height: 1.7;
-            font-size: 13px;
-            color: #666;
-            font-weight: 400;
-        }
-        
-        .button-group {
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            margin: 0 0 30px 0;
-        }
-        
-        .button { 
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 24px;
-            border-radius: 10px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 700;
-            transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
-            border: none;
-            cursor: pointer;
-            letter-spacing: 0.4px;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .button::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 0;
-            height: 0;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            transform: translate(-50%, -50%);
-            transition: width 0.6s, height 0.6s;
-        }
-        
-        .button:active::before {
-            width: 300px;
-            height: 300px;
-        }
-        
-        .button i { 
-            margin-right: 10px;
-            font-size: 18px;
-        }
-        
-        .button-vcf {
-            background: linear-gradient(135deg, #2d6a4f 0%, #40916c 100%);
-            color: white;
-            border: 2px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 8px 24px rgba(45, 106, 79, 0.35);
-            animation: ctaFlashStrong 1.2s ease-in-out infinite;
-        }
-        
-        .button-vcf:active {
-            transform: scale(0.96);
-            box-shadow: 0 4px 12px rgba(45, 106, 79, 0.25);
-        }
+  <!-- Font Awesome for icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
-        @keyframes ctaFlashStrong {
-            0%, 100% {
-                transform: scale(1);
-                filter: brightness(1);
-                box-shadow:
-                    0 8px 24px rgba(45, 106, 79, 0.35),
-                    0 0 0 rgba(255,255,255,0);
-            }
-            50% {
-                transform: scale(1.03);
-                filter: brightness(1.18);
-                box-shadow:
-                    0 14px 34px rgba(45,106,79,0.75),
-                    0 0 24px rgba(255,255,255,0.55);
-            }
-        }
-        
-        .button-primary {
-            background: linear-gradient(135deg, #0077b5 0%, #005a91 100%);
-            color: white;
-            box-shadow: 0 6px 20px rgba(0, 119, 181, 0.25);
-        }
-        
-        .button-primary:active {
-            transform: scale(0.96);
-            box-shadow: 0 3px 10px rgba(0, 119, 181, 0.15);
-        }
-        
-        .button-whatsapp {
-            background: linear-gradient(135deg, #25d366 0%, #1da753 100%);
-            color: white;
-            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
-        }
-        
-        .button-whatsapp:active {
-            transform: scale(0.96);
-            box-shadow: 0 3px 10px rgba(37, 211, 102, 0.15);
-        }
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .build-version {
-            margin-top: 2px;
-            font-size: 10px;
-            color: rgba(0, 0, 0, 0.34);
-            letter-spacing: 0.8px;
-            font-weight: 500;
-            user-select: none;
-        }
-        
-        .footer { 
-            margin-top: 26px;
-            padding-top: 24px;
-            border-top: 1px solid rgba(45, 106, 79, 0.1);
-            font-size: 11px;
-            color: #999;
-            line-height: 1.9;
-            letter-spacing: 0.4px;
-            font-weight: 500;
-            text-transform: uppercase;
-        }
-        
-        @media (max-width: 480px) {
-            .card {
-                padding: 36px 24px 40px 24px;
-                border-radius: 18px;
-            }
-            
-            .photo-container {
-                width: 140px;
-                height: 140px;
-                margin: 0 auto 32px;
-                border-width: 4px;
-            }
-            
-            h1 {
-                font-size: 32px;
-            }
-            
-            .headline {
-                font-size: 16px;
-            }
-            
-            .credibility {
-                font-size: 16px;
-            }
-            
-            .intro {
-                font-size: 12px;
-            }
-            
-            .button {
-                padding: 14px 20px;
-                font-size: 14px;
-            }
-            
-            .button i {
-                margin-right: 8px;
-                font-size: 16px;
-            }
-        }
-    </style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue",
+        Helvetica, Arial, sans-serif;
+      background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+      color: #1a1a1a;
+      text-align: center;
+      min-height: 100vh;
+      padding: 24px 16px;
+    }
+
+    .card {
+      max-width: 420px;
+      margin: 0 auto;
+      background: linear-gradient(135deg, #ffffff 0%, #f9f8f7 100%);
+      border-radius: 24px;
+      padding: 48px 32px;
+      text-align: center;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3), 0 0 1px rgba(45, 106, 79, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.4);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: linear-gradient(90deg, #2d6a4f 0%, #40916c 50%, #2d6a4f 100%);
+      opacity: 0.6;
+    }
+
+    .photo-container {
+      width: 160px;
+      height: 160px;
+      margin: 0 auto 36px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 5px solid #2d6a4f;
+      box-shadow: 0 12px 32px rgba(45, 106, 79, 0.25),
+        inset 0 1px 3px rgba(255, 255, 255, 0.3);
+      background: linear-gradient(135deg, #f0f4f3 0%, #ffffff 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+    }
+
+    .photo-container::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.05);
+      pointer-events: none;
+    }
+
+    .photo-fallback {
+      width: 100%;
+      height: 100%;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      font-size: 44px;
+      color: #2d6a4f;
+      background: #f4faf7;
+    }
+
+    .photo-container img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 22%;
+      transform: scale(1.02);
+      display: block;
+      background: #f0f4f3;
+    }
+
+    h1 {
+      font-size: 36px;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      color: #0f2027;
+      letter-spacing: -0.8px;
+      line-height: 1.1;
+    }
+
+    .headline {
+      font-size: 18px;
+      font-weight: 700;
+      color: #2d6a4f;
+      margin: 0 0 6px 0;
+      letter-spacing: 0.4px;
+    }
+
+    .subheadline {
+      font-size: 15px;
+      color: #888;
+      margin: 0 0 32px 0;
+      font-weight: 400;
+      letter-spacing: 0.5px;
+    }
+
+    .divider {
+      width: 64px;
+      height: 4px;
+      background: linear-gradient(90deg, transparent, #2d6a4f, transparent);
+      margin: 0 auto 32px;
+      border-radius: 2px;
+    }
+
+    .credibility {
+      font-size: 17px;
+      line-height: 1.9;
+      color: #222;
+      margin: 0 0 20px 0;
+      font-weight: 600;
+      letter-spacing: 0.1px;
+    }
+
+    .intro {
+      margin: 0 0 36px 0;
+      line-height: 1.7;
+      font-size: 13px;
+      color: #666;
+      font-weight: 400;
+    }
+
+    .button-group {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 0 0 30px 0;
+    }
+
+    .button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 24px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      border: none;
+      cursor: pointer;
+      letter-spacing: 0.4px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .button::before {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%);
+      transition: width 0.6s, height 0.6s;
+    }
+
+    .button:active::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    .button i {
+      margin-right: 10px;
+      font-size: 18px;
+    }
+
+    /* Burgundy flashing Save Contact button */
+    .button-vcf {
+      background: linear-gradient(135deg, #7a1e2c 0%, #a02a3c 100%);
+      color: white;
+      border: 2px solid rgba(255, 255, 255, 0.18);
+      box-shadow: 0 8px 24px rgba(122, 30, 44, 0.38);
+      animation: ctaFlashStrong 1.2s ease-in-out infinite;
+    }
+
+    .button-vcf:active {
+      transform: scale(0.96);
+      box-shadow: 0 4px 12px rgba(122, 30, 44, 0.26);
+    }
+
+    @keyframes ctaFlashStrong {
+      0%,
+      100% {
+        transform: scale(1);
+        filter: brightness(1);
+        box-shadow: 0 8px 24px rgba(122, 30, 44, 0.38),
+          0 0 0 rgba(255, 255, 255, 0);
+      }
+      50% {
+        transform: scale(1.03);
+        filter: brightness(1.2);
+        box-shadow: 0 14px 34px rgba(122, 30, 44, 0.78),
+          0 0 24px rgba(255, 255, 255, 0.55);
+      }
+    }
+
+    .button-primary {
+      background: linear-gradient(135deg, #0077b5 0%, #005a91 100%);
+      color: white;
+      box-shadow: 0 6px 20px rgba(0, 119, 181, 0.25);
+    }
+
+    .button-primary:active {
+      transform: scale(0.96);
+      box-shadow: 0 3px 10px rgba(0, 119, 181, 0.15);
+    }
+
+    .button-whatsapp {
+      background: linear-gradient(135deg, #25d366 0%, #1da753 100%);
+      color: white;
+      box-shadow: 0 6px 20px rgba(37, 211, 102, 0.25);
+    }
+
+    .button-whatsapp:active {
+      transform: scale(0.96);
+      box-shadow: 0 3px 10px rgba(37, 211, 102, 0.15);
+    }
+
+    .build-version {
+      margin-top: 2px;
+      font-size: 10px;
+      color: rgba(0, 0, 0, 0.34);
+      letter-spacing: 0.8px;
+      font-weight: 500;
+      user-select: none;
+    }
+
+    .footer {
+      margin-top: 26px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(45, 106, 79, 0.1);
+      font-size: 11px;
+      color: #999;
+      line-height: 1.9;
+      letter-spacing: 0.4px;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
+
+    @media (max-width: 480px) {
+      .card {
+        padding: 36px 24px 40px 24px;
+        border-radius: 18px;
+      }
+
+      .photo-container {
+        width: 140px;
+        height: 140px;
+        margin: 0 auto 32px;
+        border-width: 4px;
+      }
+
+      h1 {
+        font-size: 32px;
+      }
+
+      .headline {
+        font-size: 16px;
+      }
+
+      .credibility {
+        font-size: 16px;
+      }
+
+      .intro {
+        font-size: 12px;
+      }
+
+      .button {
+        padding: 14px 20px;
+        font-size: 14px;
+      }
+
+      .button i {
+        margin-right: 8px;
+        font-size: 16px;
+      }
+    }
+  </style>
 </head>
 <body>
-
-    <div class="card">
-        <div class="photo-container">
-            <img id="profile-photo"
-                 src="./Terezaho.jpg?v=20261006-6"
-                 alt="Tereza Ho - Speaker & Thought Leader"
-                 loading="eager"
-                 decoding="async"
-                 fetchpriority="high"
-                 referrerpolicy="no-referrer"
-                 crossorigin="anonymous"
-                 onerror="(function(img){img.style.display='none';var fb=document.getElementById('photo-fallback');if(fb){fb.style.display='flex';}})(this)">
-            <div id="photo-fallback" class="photo-fallback" aria-hidden="true">
-                <i class="fa-solid fa-user"></i>
-            </div>
-        </div>
-        
-        <h1>Tereza Ho</h1>
-        <div class="headline">AI & Digital Transformation</div>
-        <div class="subheadline">Speaker · Storyteller</div>
-        
-        <div class="divider"></div>
-        
-        <div class="credibility">
-            20+ years in hospitality technology, business development and regional leadership.
-        </div>
-        
-        <div class="intro">
-            I'm building my next chapter around practical AI adoption, digital transformation, communication and human connection.
-        </div>
-        
-        <div class="button-group">
-            <a class="button button-vcf" href="Tereza.vcf" download="Tereza Ho.vcf" type="text/vcard" id="save-contact-btn">
-                <i class="fa-solid fa-address-card"></i> Save Contact
-            </a>
-            
-            <a class="button button-primary" href="https://www.linkedin.com/in/terezaho" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-linkedin-in"></i> LinkedIn
-            </a>
-            
-            <a class="button button-whatsapp" href="https://wa.me/85298460499" target="_blank" rel="noopener noreferrer">
-                <i class="fa-brands fa-whatsapp"></i> WhatsApp
-            </a>
-        </div>
-
-        <div class="build-version">v2026.10.06.6</div>
-        
-        <div class="footer">
-            Hospitality Technology · AI · Digital Transformation · Speaking
-        </div>
+  <div class="card">
+    <div class="photo-container">
+      <img
+        id="profile-photo"
+        src="./Terezaho.jpg?v=20261006-7"
+        alt="Tereza Ho - Speaker & Thought Leader"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        referrerpolicy="no-referrer"
+        crossorigin="anonymous"
+        onerror="(function(img){img.style.display='none';var fb=document.getElementById('photo-fallback');if(fb){fb.style.display='flex';}})(this)"
+      />
+      <div id="photo-fallback" class="photo-fallback" aria-hidden="true">
+        <i class="fa-solid fa-user"></i>
+      </div>
     </div>
 
-    <script>
-        (function () {
-            var btn = document.getElementById('save-contact-btn');
-            if (!btn) return;
+    <h1>Tereza Ho</h1>
+    <div class="headline">AI & Digital Transformation</div>
+    <div class="subheadline">Speaker · Storyteller</div>
 
-            function autoOpenVcf() {
-                if (window.__vcfAutoOpened) return;
-                window.__vcfAutoOpened = true;
+    <div class="divider"></div>
 
-                setTimeout(function () {
-                    try {
-                        btn.click();
-                    } catch (e) {}
-                }, 500);
-            }
+    <div class="credibility">
+      20+ years in hospitality technology, business development and regional
+      leadership.
+    </div>
 
-            var isLikelyNfcEntry = /nfc|ntag|card/i.test(document.referrer || '') ||
-                                   (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
+    <div class="intro">
+      I'm building my next chapter around practical AI adoption, digital
+      transformation, communication and human connection.
+    </div>
 
-            if (isLikelyNfcEntry) {
-                autoOpenVcf();
-            }
+    <div class="button-group">
+      <a
+        class="button button-vcf"
+        href="Tereza.vcf"
+        download="Tereza Ho.vcf"
+        type="text/vcard"
+        id="save-contact-btn"
+      >
+        <i class="fa-solid fa-address-card"></i> Save Contact
+      </a>
 
-            window.addEventListener('load', function () {
-                var isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent || '');
-                if (isMobile) {
-                    autoOpenVcf();
-                }
-            }, { once: true });
-        })();
-    </script>
+      <a
+        class="button button-primary"
+        href="https://www.linkedin.com/in/terezaho"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-linkedin-in"></i> LinkedIn
+      </a>
 
+      <a
+        class="button button-whatsapp"
+        href="https://wa.me/85298460499"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <i class="fa-brands fa-whatsapp"></i> WhatsApp
+      </a>
+    </div>
+
+    <div class="build-version">v2026.10.06.7</div>
+
+    <div class="footer">
+      Hospitality Technology · AI · Digital Transformation · Speaking
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      var btn = document.getElementById("save-contact-btn");
+      if (!btn) return;
+
+      function autoOpenVcf() {
+        if (window.__vcfAutoOpened) return;
+        window.__vcfAutoOpened = true;
+
+        setTimeout(function () {
+          try {
+            btn.click();
+          } catch (e) {}
+        }, 500);
+      }
+
+      var isLikelyNfcEntry =
+        /nfc|ntag|card/i.test(document.referrer || "") ||
+        (window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
+
+      if (isLikelyNfcEntry) {
+        autoOpenVcf();
+      }
+
+      window.addEventListener(
+        "load",
+        function () {
+          var isMobile = /Android|iPhone|iPad|iPod/i.test(
+            navigator.userAgent || ""
+          );
+          if (isMobile) {
+            autoOpenVcf();
+          }
+        },
+        { once: true }
+      );
+    })();
+  </script>
 </body>
 </html>
