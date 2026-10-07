@@ -355,6 +355,7 @@
     </div>
 
     <div class="button-group">
+      <!-- vCard opens ONLY when the visitor taps this button (no auto-open) -->
       <a
         class="button button-vcf"
         href="Tereza.vcf"
@@ -384,50 +385,11 @@
       </a>
     </div>
 
-    <div class="build-version">v2026.10.06.7</div>
+    <div class="build-version">v2026.10.07.1</div>
 
     <div class="footer">
       Hospitality Technology · AI · Digital Transformation · Speaking
     </div>
   </div>
-
-  <script>
-    (function () {
-      var btn = document.getElementById("save-contact-btn");
-      if (!btn) return;
-
-      function autoOpenVcf() {
-        if (window.__vcfAutoOpened) return;
-        window.__vcfAutoOpened = true;
-
-        setTimeout(function () {
-          try {
-            btn.click();
-          } catch (e) {}
-        }, 500);
-      }
-
-      var isLikelyNfcEntry =
-        /nfc|ntag|card/i.test(document.referrer || "") ||
-        (window.matchMedia && window.matchMedia("(pointer: coarse)").matches);
-
-      if (isLikelyNfcEntry) {
-        autoOpenVcf();
-      }
-
-      window.addEventListener(
-        "load",
-        function () {
-          var isMobile = /Android|iPhone|iPad|iPod/i.test(
-            navigator.userAgent || ""
-          );
-          if (isMobile) {
-            autoOpenVcf();
-          }
-        },
-        { once: true }
-      );
-    })();
-  </script>
 </body>
 </html>
